@@ -17,11 +17,6 @@ import (
 	interceptor "github.com/problem-company-toolkit/activity-interceptor"
 )
 
-func TestInterceptor(t *testing.T) {
-	RegisterFailHandler(Fail)
-	RunSpecs(t, "Interceptor Suite")
-}
-
 var _ = Describe("Interceptor", func() {
 	var (
 		ctx     context.Context

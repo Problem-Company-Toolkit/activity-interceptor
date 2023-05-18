@@ -3,7 +3,6 @@ package interceptor_test
 import (
 	"context"
 	"net"
-	"testing"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

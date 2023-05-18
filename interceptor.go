@@ -26,25 +26,25 @@ type ActivityInfo struct {
 	StatusCode   int
 }
 
-type callbackFunc = func(context.Context, *ActivityInfo)
-type operationIDFunc = func() string
+type CallbackFunc = func(context.Context, *ActivityInfo)
+type OperationIDFunc = func() string
 
 type ActivityInterceptor struct {
 	operationIDHeader   string
-	callback            callbackFunc
-	generateOperationID operationIDFunc
+	callback            CallbackFunc
+	generateOperationID OperationIDFunc
 }
 
 type ActivityInterceptorOpts struct {
 
 	// Optional. Specifies an action to do when receiving the request. By default just logs to stdout.
-	Callback callbackFunc
+	Callback CallbackFunc
 
 	// Optional. By default it's "x-operation-id"
 	OperationIDHeader string
 
 	// Optional. By default, we generate UUIDs.
-	OperationIDFunc operationIDFunc
+	OperationIDFunc OperationIDFunc
 }
 
 func NewActivityInterceptor(opts ActivityInterceptorOpts) *ActivityInterceptor {
